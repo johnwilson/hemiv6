@@ -22,7 +22,7 @@
         "BUILDPACK_URL":"https://github.com/kr/heroku-buildpack-go.git",
         "MONGO_TIMEOUT": {
             "description": "Mongodb client timeout in seconds",
-            "value": 60
+            "value": "60"
         },
         "AUTH_DB": {
             "description": "Name of Bytengine User authentication database",
@@ -34,11 +34,11 @@
         },
         "REDIS_TIMEOUT": {
             "description": "Redis client timeout in seconds",
-            "value": 60
+            "value": "60"
         },
         "REDIS_DB": {
             "description": "Redis database number(index)",
-            "value": 0
+            "value": "0"
         },
         "REDIS_URL": {
             "description": "Url connection for Redis instance",
@@ -50,7 +50,7 @@
         },
         "CMD_WORKERS": {
             "description": "Number of Bytengine command handlers",
-            "value": 2
+            "value": "2"
         }
     },
     "addons": []
