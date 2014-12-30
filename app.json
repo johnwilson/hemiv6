@@ -1,0 +1,57 @@
+{
+    "name": "Bytengine",
+    "description": "Bytengine is a repository for CMS data and digital assets",
+    "keywords": [
+        "bytengine",
+        "cms",
+        "go",
+        "golang",
+        "http",
+        "repository",
+        "mongodb",
+        "json"
+    ],
+    "website": "http://www.bytengine.io",
+    "repository": "https://github.com/johnwilson/bytengine_heroku",
+    "logo": "https://github.com/johnwilson/hemiv6/raw/master/logo.jpg",
+    "success_url": "/",
+    "scripts": {
+        "postdeploy": "bytengine createadmin -u=admin -p=password"
+    },
+    "env": {
+        "BUILDPACK_URL":"https://github.com/kr/heroku-buildpack-go.git",
+        "MONGO_TIMEOUT": {
+            "description": "Mongodb client timeout in seconds",
+            "value": 60
+        },
+        "AUTH_DB": {
+            "description": "Name of Bytengine User authentication database",
+            "value": ""
+        },
+        "STORE_DB": {
+            "description": "Name of Bytengine ByteStore database",
+            "value": ""
+        },
+        "REDIS_TIMEOUT": {
+            "description": "Redis client timeout in seconds",
+            "value": 60
+        },
+        "REDIS_DB": {
+            "description": "Redis database number(index)",
+            "value": 0
+        },
+        "REDIS_URL": {
+            "description": "Url connection for Redis instance",
+            "value": ""
+        },
+        "MONGODB_URL": {
+            "description": "Url connection for Mongodb instance",
+            "value": ""
+        },
+        "WORKERS": {
+            "description": "Number of Bytengine command handlers",
+            "value": 2
+        }
+    },
+    "addons": []
+}

@@ -1,0 +1,9 @@
+# executables
+cmd/bytengine/bytengine
+cmd/bshell/bshell
+
+# configuration
+cmd/bytengine/config.json
+
+# Mac OS X files
+.DS_Store

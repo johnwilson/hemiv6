@@ -1,0 +1,8 @@
+# executables
+cmd/bytengine/bytengine
+
+# local config files
+cmd/bytengine/setenv.sh
+
+# Mac OS X files
+.DS_Store
