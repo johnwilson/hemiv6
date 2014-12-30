@@ -12,7 +12,7 @@
         "json"
     ],
     "website": "http://www.bytengine.io",
-    "repository": "https://github.com/johnwilson/bytengine_heroku",
+    "repository": "https://github.com/johnwilson/hemiv6",
     "logo": "https://github.com/johnwilson/hemiv6/raw/master/logo.jpg",
     "success_url": "/",
     "scripts": {
