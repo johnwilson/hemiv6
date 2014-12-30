@@ -158,7 +158,7 @@ func configToJSON() ([]byte, error) {
 	}
 
 	// get bytengine port
-	workers, err := strconv.ParseInt(os.Getenv("WORKERS"), 10, 64)
+	workers, err := strconv.ParseInt(os.Getenv("CMD_WORKERS"), 10, 64)
 	if err != nil {
 		return b, err
 	}

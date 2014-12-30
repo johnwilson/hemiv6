@@ -48,7 +48,7 @@
             "description": "Url connection for Mongodb instance",
             "value": ""
         },
-        "WORKERS": {
+        "CMD_WORKERS": {
             "description": "Number of Bytengine command handlers",
             "value": 2
         }
