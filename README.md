@@ -7,50 +7,35 @@ repository built with Go. Its API is accessible from any Http client library so
 you can start coding in your favorite language!
 
 Hemi V6 was created to make Bytengine easily deployable to Heroku for testing and
-production use.
+eventual production use.
 
-## Quick deployment
+## Quick deployment Guide
 
-**Step 1** Create a Redis instance with [Redis To Go](https://redistogo.com/). Your instance
-connection url will be of the form:
+### Prerequisits
 
-```
-    redis://redistogo:<password>@<host>:<port>/
-```
+* [Heroku account](https://www.heroku.com/)
+* [BShell - Bytengine shell](https://github.com/johnwilson/bytengine/tree/master/cmd/bshell)
 
-**Step 2** Create a Mongodb database with [Mongolab](https://mongolab.com/) and **give your database
-name a `bfs_` prefix**. After creating a database user, your connection url would be:
+### Deployment
 
-```
-    mongodb://<user>:<password>@<host>:<port>/<database>
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-**Step 3** Deploy to heroku [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-Environment variables:
-
-* *AUTH_DB* & *STORE_DB*: Mongolab `<database>` (eg. `bfs_testdb`)
-
-* *REDIS_URL*: Redis to go url: `redis://redistogo:<password>@<host>:<port>/`
-
-* *MONGODB_URL*: Mongolab url: `mongodb://<user>:<password>@<host>:<port>/<database>`
-
-**Step 4** Connect to your Bytengine instance with the following default user
-credentials (please change after login):
-
-* username: `admin`
-* password: `password`
-* port: `80`
-* host: `<your_heroku_app.herokuapp.com>`
-
-**Step 5** Create (initialize) the database with the following bytengine command
-(remove the `bfs_` prefix from database name):
-
-```
-    server.newdb "<database_name_without_prefix>"
-```
+1. Give your deployment a name `<app_name>`
+2. Accept default environment settings
+3. Wait for deployment to complete
+4. Get the MONGOLAB_URI environment variable for your instance `heroku config:get MONGOLAB_URI --app <app_name>`
+5. Your database name will be the url path: `mongodb://<username>:<password>@<instance>.mongolab.com:<port>/<database>`
+6. Fire up [bshell](https://github.com/johnwilson/bytengine/tree/master/cmd/bshell) using the default bytengine credentials: `bshell run -u=admin -p=password --port=80 --host=<app_name>.herokuapp.com`
+7. Initialise the database obtained in step 5: `bql> server.newdb "<database>"`
+8. Enjoy!
 
 ## Help
 
-If you have any problems, submit an issue or create a Stackoverflow question with 
-`bytengine` tag.
+If you have any problems, submit an issue or create a [Stackoverflow](http://stackoverflow.com)
+question with `bytengine` [tag](http://stackoverflow.com/questions/tagged/bytengine).
+
+## Some handy links
+
+[Documentation](https://bytengine.readthedocs.org/en/latest/) - Bytengine Docs
+
+[Twitter](https://twitter.com/bytengine) - Follow Bytengine
