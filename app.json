@@ -53,5 +53,8 @@
             "value": "2"
         }
     },
-    "addons": []
+    "addons": [
+        "redistogo",
+        "mongolab"
+    ]
 }
