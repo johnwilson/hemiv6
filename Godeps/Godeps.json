@@ -32,8 +32,8 @@
 		},
 		{
 			"ImportPath": "github.com/johnwilson/bytengine",
-			"Comment": "v0.2.1-21-geee8809",
-			"Rev": "eee8809db8cabaeab8acdb24ea6489d5e39d2f7f"
+			"Comment": "v0.2.1-23-g5317b7b",
+			"Rev": "5317b7bb8f4feee91a4f8ab58645bbad56aa7b8a"
 		},
 		{
 			"ImportPath": "github.com/julienschmidt/httprouter",
