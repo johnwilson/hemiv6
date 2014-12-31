@@ -26,11 +26,13 @@
         },
         "AUTH_DB": {
             "description": "Name of Bytengine User authentication database",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "STORE_DB": {
             "description": "Name of Bytengine ByteStore database",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "REDIS_TIMEOUT": {
             "description": "Redis client timeout in seconds",
@@ -42,11 +44,13 @@
         },
         "REDIS_URL": {
             "description": "Url connection for Redis instance",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "MONGODB_URL": {
             "description": "Url connection for Mongodb instance",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "CMD_WORKERS": {
             "description": "Number of Bytengine command handlers",
