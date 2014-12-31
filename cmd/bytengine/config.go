@@ -97,7 +97,12 @@ func configToJSON() ([]byte, error) {
 	}
 
 	// parse mongodb connection url
-	m_url, err := url.Parse(os.Getenv("MONGODB_URL"))
+	m_env := os.Getenv("MONGOLAB_URI")
+	if len(m_env) == 0 {
+		m_env = os.Getenv("MONGODB_URL")
+	}
+	println(m_env)
+	m_url, err := url.Parse(m_env)
 	if err != nil {
 		return b, err
 	}
@@ -114,10 +119,14 @@ func configToJSON() ([]byte, error) {
 		mt,
 	}
 
+	a_env := os.Getenv("AUTH_DB")
+	if len(a_env) == 0 {
+		a_env = m_db
+	}
 	ac := AuthConfig{
 		&mc,
 		"mongodb",
-		os.Getenv("AUTH_DB"),
+		a_env,
 	}
 
 	fc := FileSystemConfig{
@@ -125,14 +134,22 @@ func configToJSON() ([]byte, error) {
 		"mongodb",
 	}
 
+	b_env := os.Getenv("STORE_DB")
+	if len(b_env) == 0 {
+		b_env = m_db
+	}
 	bsc := ByteStoreConfig{
 		&mc,
 		"mongodb",
-		os.Getenv("STORE_DB"),
+		b_env,
 	}
 
 	// parse redis connection url
-	r_url, err := url.Parse(os.Getenv("REDIS_URL"))
+	r_env := os.Getenv("REDISTOGO_URL")
+	if len(r_env) == 0 {
+		r_env = os.Getenv("REDIS_URL")
+	}
+	r_url, err := url.Parse(r_env)
 	if err != nil {
 		return b, err
 	}
