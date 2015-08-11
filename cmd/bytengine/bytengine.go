@@ -103,7 +103,7 @@ func runScriptHandler(ctx *gin.Context) {
 	}
 
 	ok := ctx.Bind(&form)
-	if !ok {
+	if ok != nil {
 		data := errorResponse(errors.New("Missing parameters"))
 		ctx.Data(400, "application/json", data)
 		return
@@ -131,7 +131,7 @@ func getTokenHandler(ctx *gin.Context) {
 		Password string `form:"password" binding:"required"`
 	}
 	ok := ctx.Bind(&form)
-	if !ok {
+	if ok != nil {
 		data := errorResponse(errors.New("Missing parameters"))
 		ctx.Data(400, "application/json", data)
 		return
@@ -172,7 +172,7 @@ func getUploadTicketHandler(ctx *gin.Context) {
 		Path     string `form:"path" binding:"required"`
 	}
 	ok := ctx.Bind(&form)
-	if !ok {
+	if ok != nil {
 		data := errorResponse(errors.New("Missing parameters"))
 		ctx.Data(400, "application/json", data)
 		return
@@ -298,7 +298,7 @@ func downloadFileHandler(ctx *gin.Context) {
 		Path     string `form:"path" binding:"required"`
 	}
 	ok := ctx.Bind(&form)
-	if !ok {
+	if ok != nil {
 		data := errorResponse(errors.New("Missing parameters"))
 		ctx.Data(400, "application/json", data)
 		return
